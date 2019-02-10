@@ -8,6 +8,7 @@ public class CaptureTarget : MonoBehaviour
     private RaycastHit _hit;
     private Transform _positionRay;
     private GameObject _currentTarget;
+    
 
     private GameObject _character;
     public GameObject Character
@@ -44,7 +45,7 @@ public class CaptureTarget : MonoBehaviour
     {
         if (_character == null) return;
 
-        if (_currentTarget && _currentTarget.name != _character.name)
+        if (_currentTarget.CompareTag("transforMut") && _currentTarget.name != _character.name)
         {            
             _currentTarget = Instantiate
             (
