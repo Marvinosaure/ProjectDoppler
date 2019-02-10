@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 3820765906826912983}
   m_Layer: 0
   m_Name: demon
-  m_TagString: Untagged
+  m_TagString: transforMut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

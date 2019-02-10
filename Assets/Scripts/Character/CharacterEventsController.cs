@@ -76,6 +76,15 @@ public class CharacterEventsController : MonoBehaviour
     private void SwitchStateRun()
     {
         _characterController.IsRunnig = !_characterController.IsRunnig;
+
+        if (_characterController.IsRunnig)
+        {
+            _characterController.InitSpeed(_characterController.SpeedRun);
+        }
+        else
+        {
+            _characterController.InitSpeed(_characterController.SpeedWalk);
+        }
     }
 
     private void Jump()
