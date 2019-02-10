@@ -1758,9 +1758,10 @@ GameObject:
   - component: {fileID: 1326433532}
   - component: {fileID: 1326433531}
   - component: {fileID: 1326433530}
+  - component: {fileID: 2481252727572370691}
   m_Layer: 0
   m_Name: Archer
-  m_TagString: Untagged
+  m_TagString: transforMut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1832,6 +1833,21 @@ CapsuleCollider:
   m_Height: 1.7968879
   m_Direction: 1
   m_Center: {x: 0.002434671, y: 0.89823365, z: 0}
+--- !u!114 &2481252727572370691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326433526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f21487f4c5b176439d57e6c61b0cbb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speedRun: 15
+  _speedWalk: 3
+  _jumpForce: 250
 --- !u!1 &1333640733
 GameObject:
   m_ObjectHideFlags: 0

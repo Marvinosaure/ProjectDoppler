@@ -3,20 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour
-{
-    [SerializeField] private int _speed = 8;
-    [SerializeField] private int _jumpForce = 200;
+{        
     [SerializeField] private int _rotationSpeed = 7;
+
+    private int _speed = 8;
+
+    private int _speedRun = 8;
+    public int SpeedRun
+    {
+        get { return _speedRun; }
+        set
+        {
+            _speedRun = value;
+        }
+    }
+
+    private int _speedWalk = 3;
+    public int SpeedWalk
+    {
+        get { return _speedWalk; }
+        set
+        {
+            _speedWalk = value;
+        }
+    }
+
+    private int _jumpForce = 200;
+    public int JumpForce
+    {
+        get { return _jumpForce; }
+        set { _jumpForce = value; }
+    }
 
     private float _deltaV = 0;
     private float _deltaH = 0;    
-
-    private bool _mooving = false;
-    public bool Mooving
-    {
-        get { return _mooving; }
-        set { _mooving = value; }
-    }
 
     private bool _isRunning = true;
     public bool IsRunnig
@@ -44,5 +64,10 @@ public class CharacterController : MonoBehaviour
     public void Jump()
     {        
          GetComponent<Rigidbody>().AddForce(Vector3.up * _jumpForce);        
+    }
+
+    public void InitSpeed(int speed)
+    {
+        _speed = speed;
     }
 }
