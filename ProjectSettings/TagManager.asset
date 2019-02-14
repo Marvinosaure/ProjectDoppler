@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - transforMut
+  - Player Character
+  - Position Player Character
   layers:
   - Default
   - TransparentFX

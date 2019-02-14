@@ -58,7 +58,7 @@ public class CharacterController : MonoBehaviour
 
     public void RotationCharacter()
     {
-        transform.Rotate(Vector3.up * 100 * Input.GetAxis("Mouse X") * Time.fixedDeltaTime);
+        transform.Rotate(Vector3.up * 200 * Input.GetAxis("Mouse X") * Time.fixedDeltaTime);
     }
 
     public void Jump()
