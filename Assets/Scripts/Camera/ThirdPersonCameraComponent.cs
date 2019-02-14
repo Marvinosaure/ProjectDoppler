@@ -9,7 +9,7 @@ public class ThirdPersonCameraComponent : MonoBehaviour
     private Transform _positionCameraTP;
     private Transform _positionCameraFP;
     private Vector3 _offset;
-    private CaptureTarget _player;
+    private GameObject _player;
 
     private bool _FPViewMode;
     public bool FPViewMode
@@ -19,7 +19,7 @@ public class ThirdPersonCameraComponent : MonoBehaviour
 
     private void Awake()
     {
-        _player = GetComponent<CaptureTarget>();
+        _player = GameObject.Find("Player");
     }
 
     private void Start()
@@ -30,29 +30,29 @@ public class ThirdPersonCameraComponent : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Tab))
-            SwitchViewMode();
+            SwitchViewMode();        
     }
 
     private void LateUpdate()
     {
-        if(_player.Character != null)
+        if(_player != null)
         {        
             if (!_FPViewMode)
             {                
-                transform.position = _player.Character.transform.position + _offset;
+                transform.position = _player.transform.position + _offset;
 
                 Quaternion turnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * _rotationSpeed, Vector3.up);
                 _offset = turnAngle * _offset;
 
-                transform.LookAt(new Vector3(_player.Character.transform.position.x, transform.position.y, _player.Character.transform.position.z));
+                transform.LookAt(new Vector3(_player.transform.position.x, transform.position.y, _player.transform.position.z));
             }
             else
             {
                 if (_positionCameraFP == null) InitCamera();
 
                 transform.position = _positionCameraFP.position;
-                transform.Rotate(Vector3.left * 100 * Time.deltaTime * Input.GetAxis("Mouse Y"));
-                transform.eulerAngles = new Vector3(transform.eulerAngles.x, _positionCameraFP.eulerAngles.y, transform.eulerAngles.z);
+                transform.Rotate(Vector3.left * 200 * Time.deltaTime * Input.GetAxis("Mouse Y"));
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, _positionCameraFP.eulerAngles.y, transform.eulerAngles.z);                
             }
         }
     }
@@ -61,10 +61,10 @@ public class ThirdPersonCameraComponent : MonoBehaviour
     {
         if (_player == null) return;
 
-        _positionCameraTP = _player.Character.transform.Find("PositionCameraTP").transform;
-        _positionCameraFP = _player.Character.transform.Find("PositionCameraFP").transform;
+        _positionCameraTP = _player.transform.Find("PositionCameraTP").transform;
+        _positionCameraFP = _player.transform.Find("PositionCameraFP").transform;
         transform.position = _positionCameraTP.position;
-        _offset = transform.position - _player.Character.transform.position;
+        _offset = transform.position - _player.transform.position;
         _FPViewMode = false;
     }
 
