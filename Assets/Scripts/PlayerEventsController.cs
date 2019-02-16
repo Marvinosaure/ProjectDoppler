@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerEventsController : MonoBehaviour
 {
     private RayCaster _rayCaster;
-    private SaveTransmogrification _saveTransmogrification;
+    private Transmogrification _saveTransmogrification;
     private SwitchCharacter _switchCharacter;
     private InitPlayerCharacter _initPlayerCharacter;
     private int _currentTransmo;
@@ -13,7 +13,7 @@ public class PlayerEventsController : MonoBehaviour
     private void Awake()
     {
         _rayCaster = GetComponent<RayCaster>();
-        _saveTransmogrification = GetComponent<SaveTransmogrification>();
+        _saveTransmogrification = GetComponent<Transmogrification>();
         _switchCharacter = GetComponent<SwitchCharacter>();
         _initPlayerCharacter = GetComponent<InitPlayerCharacter>();
         _currentTransmo = 0;

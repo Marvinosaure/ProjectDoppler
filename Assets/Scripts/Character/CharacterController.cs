@@ -11,10 +11,10 @@ public class CharacterController : MonoBehaviour
     private int _speedRun = 8;
     public int SpeedRun
     {
-        get { return _speedRun; }
+        get { return _speedRun; } // permet de lire la variable _speedRun quand on fait appel a la propriété SpeedRun
         set
         {
-            _speedRun = value;
+            _speedRun = value; // permet décrire dans la variable _speedRun quand on fait appel a la propriété SpeedRun
         }
     }
 
@@ -35,8 +35,7 @@ public class CharacterController : MonoBehaviour
         set { _jumpForce = value; }
     }
 
-    private float _deltaV = 0;
-    private float _deltaH = 0;    
+    private float _deltaV = 0;   
 
     private bool _isRunning = true;
     public bool IsRunnig
@@ -45,23 +44,23 @@ public class CharacterController : MonoBehaviour
         set { _isRunning = value; }
     }
 
-    public void MoveForward()
+    public void MoveForward() // pour déplacer le perso vers l'avant
     {        
         _deltaV = Input.GetAxis("Vertical");
         transform.Translate(Vector3.forward * _speed * _deltaV * Time.fixedDeltaTime);
     }
 
-    public void RotationLerp(Transform b)
+    public void RotationLerp(Transform b) //pour faire une rotation du player en fonction de l'angle du transform passé en parametre (la caméra dans notre cas)
     {
         transform.rotation = Quaternion.Lerp(transform.rotation, b.rotation, _rotationSpeed * Time.fixedDeltaTime);
     }
 
-    public void RotationCharacter()
+    public void RotationCharacter() // permet de faire une rotation en x du perso (j'utilise cette methode uniquement pour le mode first person)
     {
         transform.Rotate(Vector3.up * 200 * Input.GetAxis("Mouse X") * Time.fixedDeltaTime);
     }
 
-    public void Jump()
+    public void Jump() // saut
     {        
          GetComponent<Rigidbody>().AddForce(Vector3.up * _jumpForce);        
     }
