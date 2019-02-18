@@ -39,7 +39,7 @@ public class StateMenuTransmo : MonoBehaviour
         {
             _canvas.enabled = true;
             _isVisible = true;
-            _scriptPause.SlowsDown();
+            _scriptPause.Pause();
         }
     }
 }

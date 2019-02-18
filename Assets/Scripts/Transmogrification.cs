@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Transmogrification : MonoBehaviour
 {
+    private GameObject _menuTransmo;
+    private CreateButtonMenuTransmo _createBtn;
+
     private List<GameObject> _listCharacters;
     public List<GameObject> ListCharacter
     {
@@ -13,7 +16,11 @@ public class Transmogrification : MonoBehaviour
     public void AddCharacter(GameObject character)
     {
         if (character.CompareTag("transforMut") && !CheckIfCharacterExist(character))
+        {
             _listCharacters.Add(character);
+            Debug.Log("create btn: "+ character.name);
+            _createBtn.CreateButton(ListCharacter.Count, character.name);
+        }
     }
 
     public GameObject ReturnCharacterById(int i)
@@ -35,5 +42,11 @@ public class Transmogrification : MonoBehaviour
             return true;        
         else
             return false;        
+    }
+
+    private void Awake()
+    {
+        _menuTransmo = GameObject.Find("MenuTransmogrification");
+        _createBtn = _menuTransmo.GetComponent<CreateButtonMenuTransmo>();        
     }
 }
