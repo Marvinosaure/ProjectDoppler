@@ -9,6 +9,7 @@ public class PlayerEventsController : MonoBehaviour
     private SwitchCharacter _switchCharacter;
     private InitPlayerCharacter _initPlayerCharacter;
     private int _currentTransmo;
+    private GameObject _buttonTransmo;
 
     private void Awake()
     {
@@ -17,6 +18,7 @@ public class PlayerEventsController : MonoBehaviour
         _switchCharacter = GetComponent<SwitchCharacter>();
         _initPlayerCharacter = GetComponent<InitPlayerCharacter>();
         _currentTransmo = 0;
+        _buttonTransmo = GameObject.Find("MenuTransmogrification");
     }
 
     private void Start()
@@ -52,7 +54,7 @@ public class PlayerEventsController : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             _rayCaster.GetInfosGameObject();
-            _saveTransmogrification.AddCharacter(_rayCaster.Target);
+            _saveTransmogrification.AddCharacter(_rayCaster.Target);                        
             _currentTransmo = _saveTransmogrification.ListCharacter.Count - 1;
         }
     }
