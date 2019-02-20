@@ -92,4 +92,5 @@ public class CharacterEventsController : MonoBehaviour
         _characterController.Jump();
         _animatorController.JumpAnimation();
     }
+
 }
