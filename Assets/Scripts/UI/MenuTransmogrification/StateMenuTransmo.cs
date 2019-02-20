@@ -11,12 +11,13 @@ public class StateMenuTransmo : MonoBehaviour
     private void Awake()
     {
         _scriptPause = GetComponent<ScriptPause>();
+
+        _canvas = GetComponent<Canvas>();
+        _canvas.GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width, Screen.height);
     }
 
     void Start()
-    {
-        _canvas = GetComponent<Canvas>();
-
+    {        
         if (_canvas.enabled)
         {
             _isVisible = true;

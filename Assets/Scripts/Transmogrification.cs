@@ -5,7 +5,7 @@ using UnityEngine;
 public class Transmogrification : MonoBehaviour
 {
     private GameObject _menuTransmo;
-    private CreateButtonMenuTransmo _createBtn;
+    private GameObject _buttonTransmo;
 
     private List<GameObject> _listCharacters;
     public List<GameObject> ListCharacter
@@ -18,14 +18,21 @@ public class Transmogrification : MonoBehaviour
         if (character.CompareTag("transforMut") && !CheckIfCharacterExist(character))
         {
             _listCharacters.Add(character);
-            Debug.Log("create btn: "+ character.name);
-            _createBtn.CreateButton(ListCharacter.Count, character.name);
+            _buttonTransmo.GetComponent<ButtonTransmo>().CreateButton(character.name);
         }
+    }
+
+    public bool IsTransmo(GameObject character)
+    {
+        if (character.CompareTag("transforMut"))
+            return true;
+        else
+            return false;
     }
 
     public GameObject ReturnCharacterById(int i)
     {
-        if(i <= _listCharacters.Count)
+        if (i <= _listCharacters.Count)
             return _listCharacters[i];
         else
             return _listCharacters[0];
@@ -34,6 +41,7 @@ public class Transmogrification : MonoBehaviour
     private void Start()
     {
         _listCharacters = new List<GameObject>();
+        _buttonTransmo = GameObject.Find("MenuTransmogrification");
     }
 
     private bool CheckIfCharacterExist(GameObject character)
@@ -46,7 +54,6 @@ public class Transmogrification : MonoBehaviour
 
     private void Awake()
     {
-        _menuTransmo = GameObject.Find("MenuTransmogrification");
-        _createBtn = _menuTransmo.GetComponent<CreateButtonMenuTransmo>();        
+        _menuTransmo = GameObject.Find("MenuTransmogrification");       
     }
 }
