@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AnimatorController : MonoBehaviour
 {
+    //Je pense que ça sert a rien que je commente cette partie parce que elle est très simple a comprendre et normalement si t'as vu le cours tu connais
     private Animator _componentAnimator;
 
     private void Awake()

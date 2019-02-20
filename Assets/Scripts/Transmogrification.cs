@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SaveTransmogrification : MonoBehaviour
+public class Transmogrification : MonoBehaviour
 {
     private List<GameObject> _listCharacters;
     public List<GameObject> ListCharacter
