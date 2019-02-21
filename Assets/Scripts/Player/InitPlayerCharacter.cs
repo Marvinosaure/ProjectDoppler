@@ -32,7 +32,7 @@ public class InitPlayerCharacter : MonoBehaviour
 
     public void DestroyCharacter(GameObject character)
     {
-        Destroy(character);
+        DestroyImmediate(character);
     }
 
     public void PlayerCharacterPosition(Vector3 position)

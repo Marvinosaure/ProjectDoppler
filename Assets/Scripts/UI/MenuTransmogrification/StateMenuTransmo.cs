@@ -5,6 +5,11 @@ using UnityEngine;
 public class StateMenuTransmo : MonoBehaviour
 {
     private bool _isVisible;
+    public bool IsVisibled
+    {
+        get { return _isVisible; }
+    }
+
     private Canvas _canvas;
     private ScriptPause _scriptPause;
 
@@ -42,5 +47,19 @@ public class StateMenuTransmo : MonoBehaviour
             _isVisible = true;
             _scriptPause.Pause();
         }
+    }
+
+    public void ShowMenu()
+    {
+        _canvas.enabled = true;
+        _isVisible = true;
+        _scriptPause.Pause();
+    }
+
+    public void HideMenu()
+    {
+        _canvas.enabled = false;
+        _isVisible = false;
+        _scriptPause.Playback();
     }
 }

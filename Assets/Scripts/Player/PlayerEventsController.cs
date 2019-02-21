@@ -6,7 +6,6 @@ public class PlayerEventsController : MonoBehaviour
 {
     private RayCaster _rayCaster;
     private Transmogrification _saveTransmogrification;
-    private SwitchCharacter _switchCharacter;
     private InitPlayerCharacter _initPlayerCharacter;
     private int _currentTransmo;
     private GameObject _buttonTransmo;
@@ -15,7 +14,6 @@ public class PlayerEventsController : MonoBehaviour
     {
         _rayCaster = GetComponent<RayCaster>();
         _saveTransmogrification = GetComponent<Transmogrification>();
-        _switchCharacter = GetComponent<SwitchCharacter>();
         _initPlayerCharacter = GetComponent<InitPlayerCharacter>();
         _currentTransmo = 0;
         _buttonTransmo = GameObject.Find("MenuTransmogrification");
@@ -31,22 +29,7 @@ public class PlayerEventsController : MonoBehaviour
     {
         CaptureTransmogrification();
         UpdatePositionPlayer();
-        SwitchCharacter();
-
-        if (Input.GetKeyUp(KeyCode.Keypad0))
-        {
-            _currentTransmo = 0;
-        }
-
-        if (Input.GetKeyUp(KeyCode.Keypad1))
-        {
-            _currentTransmo = 1;
-        }
-
-        if (Input.GetKeyUp(KeyCode.Keypad2))
-        {
-            _currentTransmo = 2;
-        }
+        SwitchCharacter();        
     }
 
     private void CaptureTransmogrification()
