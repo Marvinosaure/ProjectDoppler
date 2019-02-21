@@ -3,11 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CursorUIScript : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
+{    
+    private void Start()
     {
         Cursor.visible = false;
     }
     
+
+    public void ShowCursor()
+    {
+        Cursor.visible = true;
+    }
+
+    public void HideCursor()
+    {
+        Cursor.visible = false;
+    }
+
 }

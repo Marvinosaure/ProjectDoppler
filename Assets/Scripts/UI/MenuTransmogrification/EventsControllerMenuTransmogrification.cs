@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class EventsControllerMenuTransmogrification : MonoBehaviour
 {
-    private StateMenuTransmo _stateMenuTransmo;    
+    private StateMenuTransmo _stateMenuTransmo;
+    private CursorUIScript _cursor;
 
     private void Awake()
     {
-        _stateMenuTransmo = GetComponent<StateMenuTransmo>();        
+        _stateMenuTransmo = GetComponent<StateMenuTransmo>();
+        _cursor = GameObject.Find("Main Camera").GetComponent<CursorUIScript>();
     }
 
     void Update()
@@ -18,9 +20,15 @@ public class EventsControllerMenuTransmogrification : MonoBehaviour
 
     private void KeyBoardEvents()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
-            _stateMenuTransmo.ToggleMenu();
+            _cursor.ShowCursor();
+            _stateMenuTransmo.ShowMenu();        
+        }
+        else if(Input.GetKeyUp(KeyCode.Tab))
+        {
+            _cursor.HideCursor();
+            _stateMenuTransmo.HideMenu();        
         }
     }
 }

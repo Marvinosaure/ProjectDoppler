@@ -29,8 +29,16 @@ public class ThirdPersonCameraComponent : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Tab))
-            SwitchViewMode();        
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f)
+        {
+            transform.position = _positionCameraFP.position;
+            _FPViewMode = true;
+        }
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
+        {
+            transform.position = _positionCameraTP.position;
+            _FPViewMode = false;
+        }    
     }
 
     private void LateUpdate()

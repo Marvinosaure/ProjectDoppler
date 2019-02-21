@@ -62,7 +62,7 @@ public class CharacterEventsController : MonoBehaviour
     private void CharacterControllerMoveRotation() // cette methode fait appel a la methode RotationLerp de la classe CharacterController
     {
         if (Input.GetAxis("Vertical") > 0) // si l'axe vertical supérieur à 0 alors on rentre dans la condition      
-            _characterController.RotationLerp(_cameraComponent.transform); // ici j'appel la methode RotationLerp de la class
+            _characterController.RotationLerp(_cameraComponent.transform); // ici j'appel la methode RotationLerp de la class CharacterController
     }
 
     private void KeyboardEvents() // cette methode appel d'autres methodes en fonction de l'evenement clavier 

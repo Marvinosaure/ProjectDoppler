@@ -8,6 +8,7 @@ public class ButtonTransmo : MonoBehaviour
     private InitPlayerCharacter _initPlayer;
     private ListLocationsTransmos _listLocation;
     private SimpleButton _simpleButton;
+    private StateMenuTransmo _stateMenuTransmo;
 
     private List<GameObject> _buttonsList;
     public List<GameObject> ButtonList
@@ -32,19 +33,25 @@ public class ButtonTransmo : MonoBehaviour
     {
         _listLocation = GetComponent<ListLocationsTransmos>();
         _simpleButton = GetComponent<SimpleButton>();
+        _stateMenuTransmo = GetComponent<StateMenuTransmo>();
         _buttonsList = new List<GameObject>();
         _initPlayer = GameObject.Find("Player").GetComponent<InitPlayerCharacter>();
     }    
 
     private bool LocationAvailable()
     {
-        if(_buttonsList.Count >= _listLocation.LocationsTransmos.Length) return false;
-        else return true;        
+        if(_buttonsList.Count >= _listLocation.LocationsTransmos.Length)
+            return false;
+        else
+            return true;        
     }
 
     private void SwitchCharacter(GameObject character)
     {
-        _initPlayer.DestroyCharacter(_initPlayer.PlayerCharacter);
-        _initPlayer.NewCharacter(character);
+        if(_stateMenuTransmo.IsVisibled)
+        {       
+            _initPlayer.DestroyCharacter(_initPlayer.PlayerCharacter);
+            _initPlayer.NewCharacter(character);
+        }
     }
 }
