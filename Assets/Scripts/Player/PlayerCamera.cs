@@ -49,7 +49,7 @@ public class PlayerCamera : MonoBehaviour
             {                
                 transform.position = _player.transform.position + _offset;
 
-                Quaternion turnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * _rotationSpeed, Vector3.up);
+                Quaternion turnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * _rotationSpeed, Vector3.up * Time.deltaTime);
                 _offset = turnAngle * _offset;
 
                 transform.LookAt(new Vector3(_player.transform.position.x, transform.position.y, _player.transform.position.z));
@@ -60,7 +60,7 @@ public class PlayerCamera : MonoBehaviour
 
                 transform.position = _positionCameraFP.position;
                 transform.Rotate(Vector3.left * 200 * Time.deltaTime * Input.GetAxis("Mouse Y"));
-                transform.eulerAngles = new Vector3(transform.eulerAngles.x, _positionCameraFP.eulerAngles.y, transform.eulerAngles.z);                
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, _positionCameraFP.eulerAngles.y, transform.eulerAngles.z);        
             }
         }
     }
