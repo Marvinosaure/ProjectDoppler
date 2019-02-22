@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerEventsController : MonoBehaviour
 {
+    private PlayerCamera _camera;
     private RayCaster _rayCaster;
     private Transmogrification _saveTransmogrification;
     private InitPlayerCharacter _initPlayerCharacter;
@@ -12,7 +13,8 @@ public class PlayerEventsController : MonoBehaviour
 
     private void Awake()
     {
-        _rayCaster = GetComponent<RayCaster>();
+        _camera = GameObject.Find("Main Camera").GetComponent<PlayerCamera>();
+        _rayCaster = GameObject.Find("Main Camera").GetComponent<RayCaster>();
         _saveTransmogrification = GetComponent<Transmogrification>();
         _initPlayerCharacter = GetComponent<InitPlayerCharacter>();
         _currentTransmo = 0;
@@ -34,9 +36,10 @@ public class PlayerEventsController : MonoBehaviour
 
     private void CaptureTransmogrification()
     {
+        _rayCaster.GetInfosGameObject();
+
         if (Input.GetMouseButtonUp(0))
-        {
-            _rayCaster.GetInfosGameObject();
+        {            
             _saveTransmogrification.AddCharacter(_rayCaster.Target);                        
             _currentTransmo = _saveTransmogrification.ListCharacter.Count - 1;
         }

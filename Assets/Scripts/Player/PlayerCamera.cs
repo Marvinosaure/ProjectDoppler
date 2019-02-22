@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThirdPersonCameraComponent : MonoBehaviour
+public class PlayerCamera : MonoBehaviour
 {    
     [SerializeField] private int _rotationSpeed = 3;
     

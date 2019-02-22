@@ -22,10 +22,4 @@ public class RayCaster : MonoBehaviour
 
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10f, Color.yellow);        
     }
-
-    private void Update()
-    {
-        GetInfosGameObject();
-    }     
-    
 }
