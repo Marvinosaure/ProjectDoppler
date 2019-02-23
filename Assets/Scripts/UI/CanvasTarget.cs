@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CanvasTarget : MonoBehaviour
 {
-    private ThirdPersonCameraComponent _camera;
+    private PlayerCamera _camera;
     private Canvas _canvasComponent;
 
     private void Awake()
     {
-        _camera = GameObject.Find("Main Camera").GetComponent<ThirdPersonCameraComponent>();
+        _camera = GameObject.Find("Main Camera").GetComponent<PlayerCamera>();
         _canvasComponent = transform.GetComponent<Canvas>();
     }
 

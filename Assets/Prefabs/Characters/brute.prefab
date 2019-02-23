@@ -2121,6 +2121,8 @@ GameObject:
   - component: {fileID: 7529680448643124684}
   - component: {fileID: 7529680448643124683}
   - component: {fileID: 1447550413}
+  - component: {fileID: 3277341043702095908}
+  - component: {fileID: 4097043916769109815}
   m_Layer: 0
   m_Name: brute
   m_TagString: transforMut
@@ -2209,6 +2211,30 @@ MonoBehaviour:
   _speedRun: 8
   _speedWalk: 3
   _jumpForce: 150
+--- !u!114 &3277341043702095908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7529680448643124682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b65c05eb611d8469a68e4347ed5aae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4097043916769109815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7529680448643124682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d7a0db4021e9745a85e7fdc9c0791f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7529680448659839967
 GameObject:
   m_ObjectHideFlags: 0

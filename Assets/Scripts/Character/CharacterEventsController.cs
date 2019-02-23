@@ -26,7 +26,7 @@ public class CharacterEventsController : MonoBehaviour
     {
         _characterController.MoveForward(); //ici j'appelle la methode moveForward de la classe CharacterController.
 
-        if (_cameraComponent.GetComponent<ThirdPersonCameraComponent>().FPViewMode) // ici je test si la camera est en mode first person
+        if (_cameraComponent.GetComponent<PlayerCamera>().FPViewMode) // ici je test si la camera est en mode first person
         {
             _characterController.RotationCharacter(); //ici j'appelle la methode RotationCharacter de la classe CharacterController.
         }        
@@ -34,7 +34,7 @@ public class CharacterEventsController : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!_cameraComponent.GetComponent<ThirdPersonCameraComponent>().FPViewMode) // ici je test si la camera n'est pas en first person
+        if (!_cameraComponent.GetComponent<PlayerCamera>().FPViewMode) // ici je test si la camera n'est pas en first person
         {
             CharacterControllerMoveRotation();            
         }
