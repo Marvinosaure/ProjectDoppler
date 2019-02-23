@@ -26,7 +26,7 @@ public class BrutEventsController : MonoBehaviour
         if(transform.tag == "Player Character")
         {
             if(Input.GetMouseButtonDown(0))
-            {
+            { 
                 AnimationWeakAttack();
             }
         }
