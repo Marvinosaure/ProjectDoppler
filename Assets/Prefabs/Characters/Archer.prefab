@@ -1729,6 +1729,7 @@ GameObject:
   - component: {fileID: 1326433531}
   - component: {fileID: 1326433530}
   - component: {fileID: 2481252727572370691}
+  - component: {fileID: 1000760046489550513}
   m_Layer: 0
   m_Name: Archer
   m_TagString: transforMut
@@ -1817,6 +1818,18 @@ MonoBehaviour:
   _speedRun: 15
   _speedWalk: 3
   _jumpForce: 250
+--- !u!114 &1000760046489550513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326433526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 044a79a548fe16f4f92f2c44a14cee0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1333640733
 GameObject:
   m_ObjectHideFlags: 0

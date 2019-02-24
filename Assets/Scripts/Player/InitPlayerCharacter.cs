@@ -23,7 +23,7 @@ public class InitPlayerCharacter : MonoBehaviour
 
         character.tag = "Player Character";
 
-        character.AddComponent<AnimatorController>();
+        //character.AddComponent<AnimatorController>();
         character.AddComponent<CharacterController>();
         character.AddComponent<CharacterEventsController>();
 

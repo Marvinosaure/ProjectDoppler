@@ -54,4 +54,4 @@ public class ButtonTransmo : MonoBehaviour
             _initPlayer.NewCharacter(character);
         }
     }
-}
+}                                      

@@ -111,7 +111,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: c30677ed839fff04a90fc10678e54e69, type: 2}
 --- !u!4 &2471691 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4243724423293762, guid: c07f24e35f07ce74ba43afa35d48adf7,
@@ -187,7 +187,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &144935740
 Transform:
@@ -1143,7 +1143,7 @@ PrefabInstance:
     - target: {fileID: 7529680448643124673, guid: 3c7f313a96f25364882964b76dd3236a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.231
+      value: 1.267
       objectReference: {fileID: 0}
     - target: {fileID: 7529680448643124673, guid: 3c7f313a96f25364882964b76dd3236a,
         type: 3}
@@ -1200,6 +1200,11 @@ PrefabInstance:
       propertyPath: m_Direction
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2969836843179780608, guid: 3c7f313a96f25364882964b76dd3236a,
+        type: 3}
+      propertyPath: _attackDistance
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c7f313a96f25364882964b76dd3236a, type: 3}
 --- !u!4 &1111172249 stripped
@@ -1222,7 +1227,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1174709690
 Transform:
@@ -1256,7 +1261,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!182 &1374169896
 WindZone:
