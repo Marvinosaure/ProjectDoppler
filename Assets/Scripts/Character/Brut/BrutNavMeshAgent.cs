@@ -12,8 +12,7 @@ public class BrutNavMeshAgent : MonoBehaviour
 
     private void Start()
     {
-        _agent = GetComponent<NavMeshAgent>();
-        _brutAnimator = GetComponent<BrutAnimatorController>();
+        InitAIBrut();
     }
     
     private void Update()
@@ -25,5 +24,13 @@ public class BrutNavMeshAgent : MonoBehaviour
             _agent.speed = 0;
             _brutAnimator.WeaksAttacks();
         }        
+    }
+
+    private void InitAIBrut()
+    {
+        if (gameObject.tag == "Player Character") return;
+
+        _agent = GetComponent<NavMeshAgent>();
+        _brutAnimator = GetComponent<BrutAnimatorController>();
     }
 }

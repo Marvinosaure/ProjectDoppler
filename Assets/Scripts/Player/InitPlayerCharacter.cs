@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class InitPlayerCharacter : MonoBehaviour
 {
@@ -22,10 +23,14 @@ public class InitPlayerCharacter : MonoBehaviour
         );
 
         character.tag = "Player Character";
-
-        //character.AddComponent<AnimatorController>();
+        
         character.AddComponent<CharacterController>();
         character.AddComponent<CharacterEventsController>();
+
+        if(character.GetComponent<NavMeshAgent>() != null)
+        {
+            Destroy(character.GetComponent<NavMeshAgent>());
+        }
 
         PlayerCharacter = character;
     }
