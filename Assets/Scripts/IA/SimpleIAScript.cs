@@ -14,9 +14,7 @@ public class SimpleIAScript : MonoBehaviour
 
     private void Start()
     {
-        _agent = GetComponent<NavMeshAgent>();
-        _target = GameObject.Find("Player").GetComponent<Transform>();
-        _animator = GetComponent<AnimatorController>();
+        InitAI();
     }
     
     private void Update()
@@ -40,5 +38,13 @@ public class SimpleIAScript : MonoBehaviour
         }
 
         _agent.SetDestination(_target.position);
+    }
+    private void InitAI()
+    {
+        if (gameObject.tag == "Player Character") return;
+
+        _agent = GetComponent<NavMeshAgent>();
+        _target = GameObject.Find("Player").GetComponent<Transform>();
+        _animator = GetComponent<AnimatorController>();
     }
 }

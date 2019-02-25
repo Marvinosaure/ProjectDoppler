@@ -7,6 +7,8 @@ public class BrutStats : MonoBehaviour
     [SerializeField] private int _speedRun = 8;
     [SerializeField] private int _speedWalk = 3;
     [SerializeField] private int _jumpForce = 150;
+    [SerializeField] private int _life = 300;
+    [SerializeField] private int _damage = 15;
 
     private CharacterController _characterController;
 
